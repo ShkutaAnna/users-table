@@ -1,5 +1,5 @@
 {
-  "name": "users-app",
+  "name": "users-table",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
