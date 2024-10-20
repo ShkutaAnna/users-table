@@ -1,3 +1,5 @@
+https://shkutaanna.github.io/users-table/
+
 ## User Interaction Instructions
 
 ### Open User Details Panel
@@ -23,7 +25,7 @@
 - Newly created users will be added to the bottom of the table.
 
 
-# run application locally
+## Run locally
 
 ```console
 npm i
