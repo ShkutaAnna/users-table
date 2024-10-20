@@ -24,5 +24,8 @@
 
 
 # run application locally
-> npm i
-> ng serve
+
+```console
+npm i
+ng serve
+```
