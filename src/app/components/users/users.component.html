@@ -1,0 +1,7 @@
+<div class="container">
+  <button mat-flat-button class="add-user-btn" color="primary" (click)="handleCreateUser()">Add User</button>
+  <app-users-table [users]="users" (userIdEmitter)="handleUserSelection($event)"></app-users-table>
+</div>
+
+<app-user-info #userInfoPanel [user]="currentUser" (edit)="handleEditUser($event)" (delete)="handleDeleteUser($event)"></app-user-info>
+  

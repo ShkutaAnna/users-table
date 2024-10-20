@@ -1,0 +1,8 @@
+.container {
+    padding: 32px;
+    max-width: 95vw;
+}
+
+.add-user-btn {
+    float: right;
+}

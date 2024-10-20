@@ -1,0 +1,85 @@
+<div class="overlay" *ngIf="isOpen" (click)="closePanel()"></div>
+
+<div class="sliding-panel" [class.open]="isOpen" (click)="$event.stopPropagation()">
+    <button mat-icon-button class="close-btn" (click)="closePanel()">
+        <mat-icon class="material-symbols-outlined">chevron_right</mat-icon>
+    </button>
+    
+    <ng-container *ngIf="user">
+        <div class="user-actions">
+            <button mat-icon-button (click)="handleEditUser()">
+                <mat-icon class="material-symbols-outlined">edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="handleDeleteUser()">
+                <mat-icon class="material-symbols-outlined">delete</mat-icon>
+            </button>
+        </div>
+
+        <div class="user-info">
+            <div class="user-main-info-container">
+                <div class="name">{{user.name}}</div>
+                <div class="username">{{user.username}}</div>
+                <mat-divider class="main-info-divider"></mat-divider>
+                <div class="contact-info-container">
+                    <div *ngIf="user.email" class="user-email-container">
+                        <mat-icon class="material-symbols-outlined">mail</mat-icon>
+                        <span>{{user.email}}</span>
+                    </div>
+                    <div *ngIf="user.phone" class="user-phone-container">
+                        <mat-icon class="material-symbols-outlined">call</mat-icon>
+                        <span>{{user.phone}}</span>
+                    </div>
+                    <div *ngIf="user.website" class="user-website-container">
+                        <mat-icon class="material-symbols-outlined">link</mat-icon>
+                        <a href="{{user.website}}" target="_blank" rel="noopener noreferrer">{{user.website}}</a>
+                    </div>
+                </div>
+            </div>
+    
+            <ng-container *ngIf="user.company && (user.company.name || user.company.catchPhrase)">
+                <div class="user-company-container">
+                    <div class="user-company-header">
+                        <span>Company</span>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="user-company-content">
+                        <div *ngIf="user.company.name" class="company-header">
+                            <span class="company-name">{{user.company.name}}</span>
+                        </div>
+                        <i *ngIf="user.company.catchPhrase">"{{user.company.catchPhrase}}"</i>
+                    </div>
+                </div>
+            </ng-container>
+    
+            <ng-container *ngIf="user.address && isAddressShown()">
+                <div class="user-address-container">
+                    <div class="user-address-header">
+                        <span>Address</span>
+                        <mat-icon *ngIf="user.address?.geo?.lat && user.address?.geo?.lng"
+                            class="material-symbols-outlined"
+                            matTooltip="{{'lat: ' + user.address.geo?.lat + ', ' + 'lng: ' + user.address.geo?.lng}}"
+                            matTooltipPosition="above">
+                            location_on
+                        </mat-icon>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="user-address-content">
+                        <ng-container *ngTemplateOutlet="addressField; context: { title: 'City', value: user.address.city }"></ng-container>
+                        <ng-container *ngTemplateOutlet="addressField; context: { title: 'Street', value: user.address.street }"></ng-container>
+                        <ng-container *ngTemplateOutlet="addressField; context: { title: 'Suite', value: user.address.suite }"></ng-container>
+                        <ng-container *ngTemplateOutlet="addressField; context: { title: 'Zipcode', value: user.address.zipcode }"></ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+    </ng-container>
+</div>
+
+
+<ng-template #addressField let-title="title" let-value="value">
+    <div *ngIf="value">
+      <span class="address-line-title">{{ title }}: </span>
+      <span>{{ value }}</span>
+    </div>
+</ng-template>

@@ -1,0 +1,30 @@
+.form-container {
+    margin: 24px;
+}
+
+.form-fields-container {
+    max-height: calc(100vh - 250px);
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.form-title {
+    margin-bottom: 24px;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+}
+
+.form-footer .form-divider {
+    margin-bottom: 24px;
+}

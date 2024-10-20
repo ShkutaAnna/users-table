@@ -1,27 +1,28 @@
-# UsersApp
+## User Interaction Instructions
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+### Open User Details Panel
+- Click on a table row to view more details about the user.
 
-## Development server
+### Edit User
+- Click the edit button icon located in the top right corner of the user details panel.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Delete User
+- Click the trash icon to delete a user.
+- Confirm deletion in the modal that appears.
 
-## Code scaffolding
+### Add New User
+- Click the add button located at the top of the table.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Submit Form
+- Click the submit button in the add/edit user form modal to create or edit a user.
 
-## Build
+### Cancel Changes
+- Click the cancel button to close the modal without saving any changes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### New User Addition
+- Newly created users will be added to the bottom of the table.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# run application locally
+> npm i
+> ng serve

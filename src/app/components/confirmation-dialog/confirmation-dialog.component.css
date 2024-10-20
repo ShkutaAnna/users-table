@@ -1,0 +1,14 @@
+.header {
+    margin: 0;
+}
+
+.content, .actions {
+    padding: 24px;
+}
+
+.actions {
+    padding-top: 12px;
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+}
