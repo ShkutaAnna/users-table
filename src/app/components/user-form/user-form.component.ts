@@ -10,7 +10,7 @@ import { City } from '@interfaces/City';
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrl: './user-form.component.css'
+  styleUrl: './user-form.component.css',
 })
 export class UserFormComponent implements OnInit {
   public userForm: FormGroup;

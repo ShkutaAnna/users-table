@@ -15,10 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatChipsModule } from '@angular/material/chips';
 
-import { UsersService } from '@services/users.service';
-import { GeoDataService } from '@services/geo-data.service';
 import { UserFormComponent } from '@components/user-form/user-form.component';
 import { UserInfoComponent } from '@components/user-info/user-info.component';
 import { UsersTableComponent } from '@components/users-table/users-table.component';
@@ -51,7 +48,7 @@ import { AppComponent } from './app.component';
     MatSelectModule,
     MatAutocompleteModule,
   ],
-  providers: [UsersService, GeoDataService, provideHttpClient(), provideAnimationsAsync()], // 
+  providers: [provideHttpClient(), provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
